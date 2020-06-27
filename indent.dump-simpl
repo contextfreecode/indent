@@ -1,0 +1,518 @@
+
+==================== Simplified expression ====================
+2020-06-15 14:52:32.6880338 UTC
+
+Language.Haskell.TH.Quote.quoteExp
+  NeatInterpolation.text
+  (GHC.CString.unpackCString#
+     "\n\
+     \        - name: Nuevo Progreso\n\
+     \          population: 2704\n\
+     \        - name: San Marcos\n\
+     \          population: 47063\n\
+     \        - name: Xela\n\
+     \          population: 180706\n\
+     \    "#)
+
+
+==================== Tidy Core ====================
+2020-06-15 14:52:32.7816031 UTC
+
+Result size of Tidy Core
+  = {terms: 360, types: 191, coercions: 16, joins: 0/1}
+
+-- RHS size: {terms: 40, types: 26, coercions: 0, joins: 0/0}
+$cshowsPrec_r6ox :: Int -> Categorized -> ShowS
+[GblId, Arity=2, Unf=OtherCon []]
+$cshowsPrec_r6ox
+  = \ (a_a623 :: Int) (ds_d6pa :: Categorized) ->
+      case ds_d6pa of { Categorized b1_a624 b2_a625 ->
+      showParen
+        (>= @ Int GHC.Classes.$fOrdInt a_a623 (GHC.Types.I# 11#))
+        (. @ String
+           @ String
+           @ String
+           (showString (GHC.CString.unpackCString# "Categorized {"#))
+           (. @ String
+              @ String
+              @ String
+              (showString (GHC.CString.unpackCString# "categorizedName = "#))
+              (. @ String
+                 @ String
+                 @ String
+                 (showsPrec
+                    @ Text
+                    text-1.2.4.0:Data.Text.Show.$fShowText
+                    (GHC.Types.I# 0#)
+                    b1_a624)
+                 (. @ String
+                    @ String
+                    @ String
+                    GHC.Show.showCommaSpace
+                    (. @ String
+                       @ String
+                       @ String
+                       (showString (GHC.CString.unpackCString# "category = "#))
+                       (. @ String
+                          @ String
+                          @ String
+                          (showsPrec
+                             @ Text
+                             text-1.2.4.0:Data.Text.Show.$fShowText
+                             (GHC.Types.I# 0#)
+                             b2_a625)
+                          (showString (GHC.CString.unpackCString# "}"#))))))))
+      }
+
+Rec {
+-- RHS size: {terms: 4, types: 1, coercions: 0, joins: 0/0}
+Main.$fShowCategorized [InlPrag=NOUSERINLINE CONLIKE]
+  :: Show Categorized
+[GblId[DFunId]]
+Main.$fShowCategorized
+  = GHC.Show.C:Show
+      @ Categorized $cshowsPrec_r6ox $cshow_r6pX $cshowList_r6pW
+
+-- RHS size: {terms: 2, types: 1, coercions: 0, joins: 0/0}
+$cshowList_r6pW :: [Categorized] -> ShowS
+[GblId]
+$cshowList_r6pW
+  = GHC.Show.$dmshowList @ Categorized Main.$fShowCategorized
+
+-- RHS size: {terms: 2, types: 1, coercions: 0, joins: 0/0}
+$cshow_r6pX :: Categorized -> String
+[GblId]
+$cshow_r6pX = GHC.Show.$dmshow @ Categorized Main.$fShowCategorized
+end Rec }
+
+-- RHS size: {terms: 40, types: 26, coercions: 0, joins: 0/0}
+$cshowsPrec1_r6pY :: Int -> Place -> ShowS
+[GblId, Arity=2, Unf=OtherCon []]
+$cshowsPrec1_r6pY
+  = \ (a_a620 :: Int) (ds_d6p9 :: Place) ->
+      case ds_d6p9 of { Place b1_a621 b2_a622 ->
+      showParen
+        (>= @ Int GHC.Classes.$fOrdInt a_a620 (GHC.Types.I# 11#))
+        (. @ String
+           @ String
+           @ String
+           (showString (GHC.CString.unpackCString# "Place {"#))
+           (. @ String
+              @ String
+              @ String
+              (showString (GHC.CString.unpackCString# "placeName = "#))
+              (. @ String
+                 @ String
+                 @ String
+                 (showsPrec
+                    @ Text
+                    text-1.2.4.0:Data.Text.Show.$fShowText
+                    (GHC.Types.I# 0#)
+                    b1_a621)
+                 (. @ String
+                    @ String
+                    @ String
+                    GHC.Show.showCommaSpace
+                    (. @ String
+                       @ String
+                       @ String
+                       (showString (GHC.CString.unpackCString# "population = "#))
+                       (. @ String
+                          @ String
+                          @ String
+                          (showsPrec @ Int GHC.Show.$fShowInt (GHC.Types.I# 0#) b2_a622)
+                          (showString (GHC.CString.unpackCString# "}"#))))))))
+      }
+
+Rec {
+-- RHS size: {terms: 4, types: 1, coercions: 0, joins: 0/0}
+Main.$fShowPlace [InlPrag=NOUSERINLINE CONLIKE] :: Show Place
+[GblId[DFunId]]
+Main.$fShowPlace
+  = GHC.Show.C:Show
+      @ Place $cshowsPrec1_r6pY $cshow1_r6q0 $cshowList1_r6pZ
+
+-- RHS size: {terms: 2, types: 1, coercions: 0, joins: 0/0}
+$cshowList1_r6pZ :: [Place] -> ShowS
+[GblId]
+$cshowList1_r6pZ = GHC.Show.$dmshowList @ Place Main.$fShowPlace
+
+-- RHS size: {terms: 2, types: 1, coercions: 0, joins: 0/0}
+$cshow1_r6q0 :: Place -> String
+[GblId]
+$cshow1_r6q0 = GHC.Show.$dmshow @ Place Main.$fShowPlace
+end Rec }
+
+-- RHS size: {terms: 5, types: 4, coercions: 0, joins: 0/0}
+Main.$sel:population:Place :: Place -> Int
+[GblId[[RecSel]], Arity=1, Caf=NoCafRefs, Unf=OtherCon []]
+Main.$sel:population:Place
+  = \ (ds_d6p6 :: Place) ->
+      case ds_d6p6 of { Place ds1_d6p7 ds2_d6p8 -> ds2_d6p8 }
+
+-- RHS size: {terms: 5, types: 4, coercions: 0, joins: 0/0}
+Main.$sel:placeName:Place :: Place -> Text
+[GblId[[RecSel]], Arity=1, Caf=NoCafRefs, Unf=OtherCon []]
+Main.$sel:placeName:Place
+  = \ (ds_d6p3 :: Place) ->
+      case ds_d6p3 of { Place ds1_d6p4 ds2_d6p5 -> ds1_d6p4 }
+
+-- RHS size: {terms: 5, types: 4, coercions: 0, joins: 0/0}
+Main.$sel:category:Categorized :: Categorized -> Text
+[GblId[[RecSel]], Arity=1, Caf=NoCafRefs, Unf=OtherCon []]
+Main.$sel:category:Categorized
+  = \ (ds_d6p0 :: Categorized) ->
+      case ds_d6p0 of { Categorized ds1_d6p1 ds2_d6p2 -> ds2_d6p2 }
+
+-- RHS size: {terms: 5, types: 4, coercions: 0, joins: 0/0}
+Main.$sel:categorizedName:Categorized :: Categorized -> Text
+[GblId[[RecSel]], Arity=1, Caf=NoCafRefs, Unf=OtherCon []]
+Main.$sel:categorizedName:Categorized
+  = \ (ds_d6oX :: Categorized) ->
+      case ds_d6oX of { Categorized ds1_d6oY ds2_d6oZ -> ds1_d6oY }
+
+-- RHS size: {terms: 3, types: 0, coercions: 2, joins: 0/0}
+places1_r6q1 :: Text
+[GblId]
+places1_r6q1
+  = (Data.Text.$fIsStringText
+     `cast` (Data.String.N:IsString[0] <Text>_N
+             :: Data.String.IsString Text ~R# (String -> Text)))
+      (GHC.CString.unpackCString# "Nuevo Progreso"#)
+
+-- RHS size: {terms: 2, types: 0, coercions: 0, joins: 0/0}
+places2_r6q2 :: Int
+[GblId, Caf=NoCafRefs, Unf=OtherCon []]
+places2_r6q2 = GHC.Types.I# 2704#
+
+-- RHS size: {terms: 3, types: 0, coercions: 0, joins: 0/0}
+places3_r6q3 :: Place
+[GblId, Unf=OtherCon []]
+places3_r6q3 = Main.Place places1_r6q1 places2_r6q2
+
+-- RHS size: {terms: 3, types: 0, coercions: 2, joins: 0/0}
+places4_r6q4 :: Text
+[GblId]
+places4_r6q4
+  = (Data.Text.$fIsStringText
+     `cast` (Data.String.N:IsString[0] <Text>_N
+             :: Data.String.IsString Text ~R# (String -> Text)))
+      (GHC.CString.unpackCString# "San Marcos"#)
+
+-- RHS size: {terms: 2, types: 0, coercions: 0, joins: 0/0}
+places5_r6q5 :: Int
+[GblId, Caf=NoCafRefs, Unf=OtherCon []]
+places5_r6q5 = GHC.Types.I# 47063#
+
+-- RHS size: {terms: 3, types: 0, coercions: 0, joins: 0/0}
+places6_r6q6 :: Place
+[GblId, Unf=OtherCon []]
+places6_r6q6 = Main.Place places4_r6q4 places5_r6q5
+
+-- RHS size: {terms: 3, types: 0, coercions: 2, joins: 0/0}
+places7_r6q7 :: Text
+[GblId]
+places7_r6q7
+  = (Data.Text.$fIsStringText
+     `cast` (Data.String.N:IsString[0] <Text>_N
+             :: Data.String.IsString Text ~R# (String -> Text)))
+      (GHC.CString.unpackCString# "Xela"#)
+
+-- RHS size: {terms: 2, types: 0, coercions: 0, joins: 0/0}
+places8_r6q8 :: Int
+[GblId, Caf=NoCafRefs, Unf=OtherCon []]
+places8_r6q8 = GHC.Types.I# 180706#
+
+-- RHS size: {terms: 3, types: 0, coercions: 0, joins: 0/0}
+places9_r6q9 :: Place
+[GblId, Unf=OtherCon []]
+places9_r6q9 = Main.Place places7_r6q7 places8_r6q8
+
+-- RHS size: {terms: 3, types: 2, coercions: 0, joins: 0/0}
+places10_r6qa :: [Place]
+[GblId, Unf=OtherCon []]
+places10_r6qa
+  = GHC.Types.: @ Place places9_r6q9 (GHC.Types.[] @ Place)
+
+-- RHS size: {terms: 3, types: 1, coercions: 0, joins: 0/0}
+places11_r6qb :: [Place]
+[GblId, Unf=OtherCon []]
+places11_r6qb = GHC.Types.: @ Place places6_r6q6 places10_r6qa
+
+-- RHS size: {terms: 3, types: 1, coercions: 0, joins: 0/0}
+places :: [Place]
+[GblId, Unf=OtherCon []]
+places = GHC.Types.: @ Place places3_r6q3 places11_r6qb
+
+-- RHS size: {terms: 3, types: 0, coercions: 2, joins: 0/0}
+yaml :: Text
+[GblId]
+yaml
+  = (Data.Text.$fIsStringText
+     `cast` (Data.String.N:IsString[0] <Text>_N
+             :: Data.String.IsString Text ~R# (String -> Text)))
+      (GHC.CString.unpackCString#
+         "- name: Nuevo Progreso\n\
+         \  population: 2704\n\
+         \- name: San Marcos\n\
+         \  population: 47063\n\
+         \- name: Xela\n\
+         \  population: 180706"#)
+
+-- RHS size: {terms: 29, types: 7, coercions: 2, joins: 0/0}
+yaml2 :: Text
+[GblId]
+yaml2
+  = Data.Text.intercalate
+      ((Data.Text.$fIsStringText
+        `cast` (Data.String.N:IsString[0] <Text>_N
+                :: Data.String.IsString Text ~R# (String -> Text)))
+         (GHC.CString.unpackCString# "\n"#))
+      (GHC.Types.:
+         @ Text
+         (Data.Text.pack
+            (GHC.CString.unpackCString# "- name: Nuevo Progreso"#))
+         (GHC.Types.:
+            @ Text
+            (Data.Text.pack (GHC.CString.unpackCString# "  population: 2704"#))
+            (GHC.Types.:
+               @ Text
+               (Data.Text.pack (GHC.CString.unpackCString# "- name: San Marcos"#))
+               (GHC.Types.:
+                  @ Text
+                  (Data.Text.pack
+                     (GHC.CString.unpackCString# "  population: 47063"#))
+                  (GHC.Types.:
+                     @ Text
+                     (Data.Text.pack (GHC.CString.unpackCString# "- name: Xela"#))
+                     (GHC.Types.:
+                        @ Text
+                        (Data.Text.pack
+                           (GHC.CString.unpackCString# "  population: 180706"#))
+                        (GHC.Types.[] @ Text)))))))
+
+-- RHS size: {terms: 51, types: 27, coercions: 6, joins: 0/1}
+main :: IO ()
+[GblId]
+main
+  = >>
+      @ IO
+      GHC.Base.$fMonadIO
+      @ ()
+      @ ()
+      ($ @ 'GHC.Types.LiftedRep
+         @ String
+         @ (IO ())
+         putStrLn
+         (ppShow
+            @ [Categorized]
+            (GHC.Show.$fShow[] @ Categorized Main.$fShowCategorized)
+            (map
+               @ Place
+               @ Categorized
+               (\ (place_a1Su :: Place) ->
+                  Main.Categorized
+                    (case place_a1Su of { Place ds_d6p4 ds1_d6p5 -> ds_d6p4 })
+                    (let {
+                       pop_a1Sv :: Int
+                       [LclId]
+                       pop_a1Sv
+                         = case place_a1Su of { Place ds_d6p7 ds1_d6p8 -> ds1_d6p8 } } in
+                     case < @ Int GHC.Classes.$fOrdInt pop_a1Sv (GHC.Types.I# 5000#)
+                     of {
+                       False ->
+                         case < @ Int GHC.Classes.$fOrdInt pop_a1Sv (GHC.Types.I# 100000#)
+                         of {
+                           False ->
+                             (Data.Text.$fIsStringText
+                              `cast` (Data.String.N:IsString[0] <Text>_N
+                                      :: Data.String.IsString Text ~R# (String -> Text)))
+                               (GHC.CString.unpackCString# "city"#);
+                           True ->
+                             (Data.Text.$fIsStringText
+                              `cast` (Data.String.N:IsString[0] <Text>_N
+                                      :: Data.String.IsString Text ~R# (String -> Text)))
+                               (GHC.CString.unpackCString# "town"#)
+                         };
+                       True ->
+                         (Data.Text.$fIsStringText
+                          `cast` (Data.String.N:IsString[0] <Text>_N
+                                  :: Data.String.IsString Text ~R# (String -> Text)))
+                           (GHC.CString.unpackCString# "village"#)
+                     }))
+               places)))
+      (>>
+         @ IO
+         GHC.Base.$fMonadIO
+         @ ()
+         @ ()
+         (TextIO.putStrLn yaml)
+         (TextIO.putStrLn yaml2))
+
+-- RHS size: {terms: 2, types: 1, coercions: 0, joins: 0/0}
+:Main.main :: IO ()
+[GblId]
+:Main.main = GHC.TopHandler.runMainIO @ () main
+
+-- RHS size: {terms: 1, types: 0, coercions: 0, joins: 0/0}
+$trModule1_r6qc :: GHC.Prim.Addr#
+[GblId, Caf=NoCafRefs, Unf=OtherCon []]
+$trModule1_r6qc = "main"#
+
+-- RHS size: {terms: 2, types: 0, coercions: 0, joins: 0/0}
+$trModule2_r6qd :: GHC.Types.TrName
+[GblId, Caf=NoCafRefs, Unf=OtherCon []]
+$trModule2_r6qd = GHC.Types.TrNameS $trModule1_r6qc
+
+-- RHS size: {terms: 1, types: 0, coercions: 0, joins: 0/0}
+$trModule3_r6qe :: GHC.Prim.Addr#
+[GblId, Caf=NoCafRefs, Unf=OtherCon []]
+$trModule3_r6qe = "Main"#
+
+-- RHS size: {terms: 2, types: 0, coercions: 0, joins: 0/0}
+$trModule4_r6qf :: GHC.Types.TrName
+[GblId, Caf=NoCafRefs, Unf=OtherCon []]
+$trModule4_r6qf = GHC.Types.TrNameS $trModule3_r6qe
+
+-- RHS size: {terms: 3, types: 0, coercions: 0, joins: 0/0}
+Main.$trModule :: GHC.Types.Module
+[GblId, Caf=NoCafRefs, Unf=OtherCon []]
+Main.$trModule = GHC.Types.Module $trModule2_r6qd $trModule4_r6qf
+
+-- RHS size: {terms: 3, types: 1, coercions: 0, joins: 0/0}
+$krep_r6qg :: GHC.Types.KindRep
+[GblId, Unf=OtherCon []]
+$krep_r6qg
+  = GHC.Types.KindRepTyConApp
+      GHC.Types.$tcInt (GHC.Types.[] @ GHC.Types.KindRep)
+
+-- RHS size: {terms: 3, types: 1, coercions: 0, joins: 0/0}
+$krep1_r6qh :: GHC.Types.KindRep
+[GblId, Unf=OtherCon []]
+$krep1_r6qh
+  = GHC.Types.KindRepTyConApp
+      Data.Text.Internal.$tcText (GHC.Types.[] @ GHC.Types.KindRep)
+
+-- RHS size: {terms: 1, types: 0, coercions: 0, joins: 0/0}
+$tcPlace1_r6qi :: GHC.Prim.Addr#
+[GblId, Caf=NoCafRefs, Unf=OtherCon []]
+$tcPlace1_r6qi = "Place"#
+
+-- RHS size: {terms: 2, types: 0, coercions: 0, joins: 0/0}
+$tcPlace2_r6qj :: GHC.Types.TrName
+[GblId, Caf=NoCafRefs, Unf=OtherCon []]
+$tcPlace2_r6qj = GHC.Types.TrNameS $tcPlace1_r6qi
+
+-- RHS size: {terms: 7, types: 0, coercions: 0, joins: 0/0}
+Main.$tcPlace :: GHC.Types.TyCon
+[GblId, Unf=OtherCon []]
+Main.$tcPlace
+  = GHC.Types.TyCon
+      17413543590486495003##
+      4936522611239296137##
+      Main.$trModule
+      $tcPlace2_r6qj
+      0#
+      GHC.Types.krep$*
+
+-- RHS size: {terms: 3, types: 1, coercions: 0, joins: 0/0}
+$krep2_r6qk :: GHC.Types.KindRep
+[GblId, Unf=OtherCon []]
+$krep2_r6qk
+  = GHC.Types.KindRepTyConApp
+      Main.$tcPlace (GHC.Types.[] @ GHC.Types.KindRep)
+
+-- RHS size: {terms: 3, types: 0, coercions: 0, joins: 0/0}
+$krep3_r6ql :: GHC.Types.KindRep
+[GblId, Unf=OtherCon []]
+$krep3_r6ql = GHC.Types.KindRepFun $krep_r6qg $krep2_r6qk
+
+-- RHS size: {terms: 3, types: 0, coercions: 0, joins: 0/0}
+$krep4_r6qm :: GHC.Types.KindRep
+[GblId, Unf=OtherCon []]
+$krep4_r6qm = GHC.Types.KindRepFun $krep1_r6qh $krep3_r6ql
+
+-- RHS size: {terms: 1, types: 0, coercions: 0, joins: 0/0}
+$tc'Place1_r6qn :: GHC.Prim.Addr#
+[GblId, Caf=NoCafRefs, Unf=OtherCon []]
+$tc'Place1_r6qn = "'Place"#
+
+-- RHS size: {terms: 2, types: 0, coercions: 0, joins: 0/0}
+$tc'Place2_r6qo :: GHC.Types.TrName
+[GblId, Caf=NoCafRefs, Unf=OtherCon []]
+$tc'Place2_r6qo = GHC.Types.TrNameS $tc'Place1_r6qn
+
+-- RHS size: {terms: 7, types: 0, coercions: 0, joins: 0/0}
+Main.$tc'Place :: GHC.Types.TyCon
+[GblId, Unf=OtherCon []]
+Main.$tc'Place
+  = GHC.Types.TyCon
+      15442526245837398984##
+      7645540046933910679##
+      Main.$trModule
+      $tc'Place2_r6qo
+      0#
+      $krep4_r6qm
+
+-- RHS size: {terms: 1, types: 0, coercions: 0, joins: 0/0}
+$tcCategorized1_r6qp :: GHC.Prim.Addr#
+[GblId, Caf=NoCafRefs, Unf=OtherCon []]
+$tcCategorized1_r6qp = "Categorized"#
+
+-- RHS size: {terms: 2, types: 0, coercions: 0, joins: 0/0}
+$tcCategorized2_r6qq :: GHC.Types.TrName
+[GblId, Caf=NoCafRefs, Unf=OtherCon []]
+$tcCategorized2_r6qq = GHC.Types.TrNameS $tcCategorized1_r6qp
+
+-- RHS size: {terms: 7, types: 0, coercions: 0, joins: 0/0}
+Main.$tcCategorized :: GHC.Types.TyCon
+[GblId, Unf=OtherCon []]
+Main.$tcCategorized
+  = GHC.Types.TyCon
+      9126733633113768155##
+      3735673390988809253##
+      Main.$trModule
+      $tcCategorized2_r6qq
+      0#
+      GHC.Types.krep$*
+
+-- RHS size: {terms: 3, types: 1, coercions: 0, joins: 0/0}
+$krep5_r6qr :: GHC.Types.KindRep
+[GblId, Unf=OtherCon []]
+$krep5_r6qr
+  = GHC.Types.KindRepTyConApp
+      Main.$tcCategorized (GHC.Types.[] @ GHC.Types.KindRep)
+
+-- RHS size: {terms: 3, types: 0, coercions: 0, joins: 0/0}
+$krep6_r6qs :: GHC.Types.KindRep
+[GblId, Unf=OtherCon []]
+$krep6_r6qs = GHC.Types.KindRepFun $krep1_r6qh $krep5_r6qr
+
+-- RHS size: {terms: 3, types: 0, coercions: 0, joins: 0/0}
+$krep7_r6qt :: GHC.Types.KindRep
+[GblId, Unf=OtherCon []]
+$krep7_r6qt = GHC.Types.KindRepFun $krep1_r6qh $krep6_r6qs
+
+-- RHS size: {terms: 1, types: 0, coercions: 0, joins: 0/0}
+$tc'Categorized1_r6qu :: GHC.Prim.Addr#
+[GblId, Caf=NoCafRefs, Unf=OtherCon []]
+$tc'Categorized1_r6qu = "'Categorized"#
+
+-- RHS size: {terms: 2, types: 0, coercions: 0, joins: 0/0}
+$tc'Categorized2_r6qv :: GHC.Types.TrName
+[GblId, Caf=NoCafRefs, Unf=OtherCon []]
+$tc'Categorized2_r6qv = GHC.Types.TrNameS $tc'Categorized1_r6qu
+
+-- RHS size: {terms: 7, types: 0, coercions: 0, joins: 0/0}
+Main.$tc'Categorized :: GHC.Types.TyCon
+[GblId, Unf=OtherCon []]
+Main.$tc'Categorized
+  = GHC.Types.TyCon
+      6301642303633938037##
+      11414956056022376980##
+      Main.$trModule
+      $tc'Categorized2_r6qv
+      0#
+      $krep7_r6qt
+
+

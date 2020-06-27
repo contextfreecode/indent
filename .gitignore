@@ -1,0 +1,12 @@
+/.fake
+/.ionide
+/.mypy_cache/
+/.vscode/
+/bin/
+/ghc-out/
+/indent
+/obj/
+*.dyn_hi
+*.dyn_o
+*.hi
+*.o
